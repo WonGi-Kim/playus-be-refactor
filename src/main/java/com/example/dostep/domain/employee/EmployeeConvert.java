@@ -4,6 +4,7 @@ import com.example.dostep.domain.employee.model.Account;
 import com.example.dostep.domain.employee.model.Employee;
 import com.example.dostep.domain.employee.model.PersonalInfo;
 import com.example.dostep.domain.sheet.GoogleSheetConvertHelper;
+import com.example.dostep.global.headers.SheetHeaders;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -35,20 +36,20 @@ public class EmployeeConvert {
 
             // PersonalInfo 생성 및 설정
             PersonalInfo personalInfo = PersonalInfo.builder()
-                    .employeeId(Long.parseLong(row.get(headerIndexMap.get("사번")).toString()))
-                    .employeeName(row.get(headerIndexMap.get("이름")).toString())
-                    .joinDate(row.get(headerIndexMap.get("입사일")).toString())
-                    .affiliation(row.get(headerIndexMap.get("소속")).toString())
-                    .department(Integer.parseInt(row.get(headerIndexMap.get("직무그룹")).toString()))
-                    .level(row.get(headerIndexMap.get("레벨")).toString())
+                    .employeeId(Long.parseLong(row.get(headerIndexMap.get(SheetHeaders.EMPLOYEE_ID.getHeaderName())).toString()))
+                    .employeeName(row.get(headerIndexMap.get(SheetHeaders.EMPLOYEE_NAME.getHeaderName())).toString())
+                    .joinDate(row.get(headerIndexMap.get(SheetHeaders.JOIN_DATE.getHeaderName())).toString())
+                    .affiliation(row.get(headerIndexMap.get(SheetHeaders.AFFILIATION.getHeaderName())).toString())
+                    .department(Integer.parseInt(row.get(headerIndexMap.get(SheetHeaders.DEPARTMENT.getHeaderName())).toString()))
+                    .level(row.get(headerIndexMap.get(SheetHeaders.LEVEL.getHeaderName())).toString())
                     .build();
 
             // Account 생성 및 설정
             Account account = Account.builder()
-                    .username(row.get(headerIndexMap.get("아이디")).toString())
-                    .defaultPassword(row.get(headerIndexMap.get("기본패스워드")).toString())
-                    .changedPassword(row.get(headerIndexMap.get("변경패스워드")) == null ? null :
-                            row.get(headerIndexMap.get("변경패스워드")).toString())
+                    .username(row.get(headerIndexMap.get(SheetHeaders.USERNAME.getHeaderName())).toString())
+                    .defaultPassword(row.get(headerIndexMap.get(SheetHeaders.DEFAULT_PASSWORD.getHeaderName())).toString())
+                    .changedPassword(row.get(headerIndexMap.get(SheetHeaders.CHANGED_PASSWORD.getHeaderName())) == null ? null :
+                            row.get(headerIndexMap.get(SheetHeaders.CHANGED_PASSWORD.getHeaderName())).toString())
                     .build();
 
             // 연도별 포인트 설정
