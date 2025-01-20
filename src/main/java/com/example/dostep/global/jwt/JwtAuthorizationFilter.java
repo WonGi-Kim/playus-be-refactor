@@ -1,6 +1,6 @@
 package com.example.dostep.global.jwt;
 
-import com.example.dostep.domain.employee.Employee;
+import com.example.dostep.domain.employee.model.Employee;
 import com.example.dostep.domain.employee.EmployeeRepository;
 import com.example.dostep.domain.security.UserDetailsImpl;
 import com.example.dostep.global.exception.CustomException;
@@ -71,7 +71,7 @@ public class JwtAuthorizationFilter extends OncePerRequestFilter {
                 () -> new CustomException(ErrorCode.USER_NOT_FOUND)
         );
 
-        String refreshToken = employee.getAccount().getUpdatedPassword();  // 예시 필드명
+        String refreshToken = employee.getAccount().getChangedPassword();  // 예시 필드명
         if (refreshToken != null && JwtUtil.isTokenValid(refreshToken)) {
             String newAccessToken = JwtUtil.createToken(employee.getAccount().getUsername(), JwtUtil.ACCESS_TOKEN_EXPIRATION);
             response.addHeader(JwtUtil.AUTHORIZATION_HEADER, "Bearer " + newAccessToken);

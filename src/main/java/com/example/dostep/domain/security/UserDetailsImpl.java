@@ -1,6 +1,6 @@
 package com.example.dostep.domain.security;
 
-import com.example.dostep.domain.employee.Employee;
+import com.example.dostep.domain.employee.model.Employee;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
