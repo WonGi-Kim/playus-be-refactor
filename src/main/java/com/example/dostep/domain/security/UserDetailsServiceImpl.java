@@ -1,7 +1,7 @@
 package com.example.dostep.domain.security;
 
 
-import com.example.dostep.domain.employee.Employee;
+import com.example.dostep.domain.employee.model.Employee;
 import com.example.dostep.domain.employee.EmployeeRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

@@ -1,6 +1,7 @@
 package com.example.dostep.global.jwt;
 
-import com.example.dostep.domain.employee.Employee;
+import com.example.dostep.domain.employee.dto.LoginRequestDto;
+import com.example.dostep.domain.employee.model.Employee;
 import com.example.dostep.domain.employee.EmployeeRepository;
 import com.example.dostep.global.exception.CustomException;
 import com.example.dostep.global.exception.ErrorCode;
@@ -68,7 +69,7 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
         Employee employee = employeeRepository.findByAccountUsername(username).orElseThrow(
                 () -> new CustomException(ErrorCode.EMPLOYEE_NOT_FOUND)
         );
-        employee.getAccount().setUpdatedPassword(refreshToken);
+        employee.getAccount().setChangedPassword(refreshToken);
         employeeRepository.save(employee);
     }
 

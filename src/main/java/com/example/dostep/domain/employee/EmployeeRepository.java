@@ -1,5 +1,6 @@
 package com.example.dostep.domain.employee;
 
+import com.example.dostep.domain.employee.model.Employee;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
