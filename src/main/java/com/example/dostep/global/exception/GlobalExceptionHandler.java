@@ -1,6 +1,6 @@
 package com.example.dostep.global.exception;
 
-import org.example.playus.global.common.CommonErrorResponse;
+import com.example.dostep.global.common.CommonErrorResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
