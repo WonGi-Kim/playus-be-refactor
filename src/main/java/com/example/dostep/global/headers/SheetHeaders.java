@@ -13,6 +13,14 @@ public enum SheetHeaders {
     USERNAME("아이디"),
     DEFAULT_PASSWORD("기본패스워드"),
     CHANGED_PASSWORD("변경패스워드"),
+
+    // EmployeeExp
+    TOTAL_EXP("2024년 획득한 총 경험치"),
+    FIRST_HALF_EVALUATION_EXP("상반기 인사평가"),
+    SECOND_HALF_EVALUATION_EXP("하반기 인사평가"),
+    GROUP_QUEST_EXP("직무별 퀘스트"),
+    LEADER_QUEST_EXP("리더부여 퀘스트"),
+    PROJECT_EXP("전사 프로젝트")
     ;
 
     private final String headerName;
