@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface EmployeeExpRepository extends MongoRepository<EmployeeExp, String> {
+    void deleteByYear(int year);
 }
