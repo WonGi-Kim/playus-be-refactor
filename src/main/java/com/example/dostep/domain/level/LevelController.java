@@ -1,4 +1,4 @@
-package com.example.dostep.domain.employee;
+package com.example.dostep.domain.level;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
@@ -9,25 +9,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/employee")
+@RequestMapping("/api/level")
 @RequiredArgsConstructor
-public class EmployeeController {
-
-    private final EmployeeService employeeService;
+public class LevelController {
+    private final LevelService levelService;
 
     @Value("${google.spreadsheet.id}")
     private String spreadSheetId; // 스프레드시트 ID
-    private static final String EmployeeRANGE = "구성원정보!B9:V"; // 구성원 정보
+    private static final String LevelRange = "레벨별 경험치";
 
+    // 레벨 별 경험치
     @PostMapping("/sync")
-    public ResponseEntity<String> syncEmployees() {
+    public ResponseEntity<String> syncLevelExp() {
         try {
-            employeeService.syncEmployeeData(spreadSheetId, EmployeeRANGE);
-            return ResponseEntity.ok("직원 데이터 동기화 완료");
+            levelService.syncLevelExp(spreadSheetId, LevelRange);
+            return ResponseEntity.ok("레벨 별 경험치 동기화 완료");
         } catch (Exception e) {
             e.printStackTrace();
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("직원 데이터 동기화 실패: " + e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("레벨 별 경험치 동기화 실패: " + e.getMessage());
         }
     }
-
 }

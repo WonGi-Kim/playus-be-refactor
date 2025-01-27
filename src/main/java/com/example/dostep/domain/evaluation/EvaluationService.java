@@ -17,7 +17,6 @@ public class EvaluationService {
 
     private final EvaluationRepository evaluationRepository;
     private static final GoogleSheetHelper googleSheetHelper = new GoogleSheetHelper();
-    private final EmployeeRepository employeeRepository;
 
     public void syncEvaluation(String spreadSheetId, String evaluationRange) {
         try {

@@ -26,6 +26,9 @@ public enum SheetHeaders {
     EVL_GRADE("인사평가 등급"),
     EVL_EXPERIENCE("부여 경험치"),
     EVL_NOTE("비고"),
+
+    // Level And Exp
+    REQUIRED_EXP("총 필요 경험치"),
     ;
 
     private final String headerName;
