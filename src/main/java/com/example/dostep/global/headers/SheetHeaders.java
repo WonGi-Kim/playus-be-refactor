@@ -29,6 +29,15 @@ public enum SheetHeaders {
 
     // Level And Exp
     REQUIRED_EXP("총 필요 경험치"),
+
+    // GroupQuest
+    GROUP_QUEST_PERIOD("주기"),
+    GROUP_QUEST_MAX_SCORE("MAX 점수"),
+    GROUP_QUEST_MEDIUM_SCORE("MEDIUM 점수"),
+    GROUP_QUEST_WEEK("주차"),
+    GROUP_QUEST_MONTH("월"),
+    GROUP_QUEST_EXPERIENCE("부여 경험치"),
+    GROUP_QUEST_ETC("비고")
     ;
 
     private final String headerName;
