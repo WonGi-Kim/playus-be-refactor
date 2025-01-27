@@ -20,7 +20,12 @@ public enum SheetHeaders {
     SECOND_HALF_EVALUATION_EXP("하반기 인사평가"),
     GROUP_QUEST_EXP("직무별 퀘스트"),
     LEADER_QUEST_EXP("리더부여 퀘스트"),
-    PROJECT_EXP("전사 프로젝트")
+    PROJECT_EXP("전사 프로젝트"),
+
+    // Evaluation
+    EVL_GRADE("인사평가 등급"),
+    EVL_EXPERIENCE("부여 경험치"),
+    EVL_NOTE("비고"),
     ;
 
     private final String headerName;
